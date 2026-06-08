@@ -1,7 +1,7 @@
-./user_tests
+user_tests/
 language.md
 simulator.md
 code.rs
-./target
+target/
 Control_Unit.drawio
 datapath.drawio

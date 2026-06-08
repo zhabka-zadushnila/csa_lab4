@@ -1,1 +1,0 @@
-/home/zhabka/Documents/labs/arch_comp/lab4_try2/target/release/libcompiler.rlib: /home/zhabka/Documents/labs/arch_comp/lab4_try2/compiler/src/assembler.rs /home/zhabka/Documents/labs/arch_comp/lab4_try2/compiler/src/lexer.rs /home/zhabka/Documents/labs/arch_comp/lab4_try2/compiler/src/lib.rs /home/zhabka/Documents/labs/arch_comp/lab4_try2/compiler/src/parser.rs
