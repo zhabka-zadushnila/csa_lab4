@@ -1,0 +1,11 @@
+[package]
+name = "tester"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+compiler = { path = "../compiler" }
+serde = { version = "1.0.228", features = ["derive"] }
+simulator = { path = "../simulator" }
+toml = "1.1.2"
+
