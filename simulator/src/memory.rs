@@ -153,7 +153,7 @@ impl Memory {
                     } else {
                         0
                     };
-                    let byte = ((word >> (byte_off * 8)) & 0xFF) as i32;
+                    let byte = (word >> (byte_off * 8)) & 0xFF;
                     result |= byte << (i * 8);
                 }
                 result
@@ -171,7 +171,7 @@ impl Memory {
             let word_addr = (byte_addr / 4) as usize;
             let byte_off = (byte_addr % 4) as usize;
             if word_addr < self.size {
-                let byte = ((value >> (i * 8)) & 0xFF) as i32;
+                let byte = (value >> (i * 8)) & 0xFF;
                 let mask = !(0xFF << (byte_off * 8));
                 let old = self.data[word_addr];
                 self.data[word_addr] = (old & mask) | (byte << (byte_off * 8));
