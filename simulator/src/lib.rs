@@ -24,7 +24,7 @@ pub fn run(result: &compiler::CompileResult, input: &[i32]) -> Result<Simulation
         words.push(val);
     }
 
-    let data_words = data_end as usize;
+    let data_words = data_end as usize / 4;
 
     memory.load(0, &words[0..data_words]);
     let code_len = words.len() - data_words;
@@ -33,7 +33,7 @@ pub fn run(result: &compiler::CompileResult, input: &[i32]) -> Result<Simulation
     memory.input_buf = input.to_vec();
 
     proc.pc = data_end;
-    proc.sp = data_end + code_len as u32;
+    proc.sp = data_end + code_len as u32 * 4;
 
     while proc.run {
         mpu.tick(&mut proc, &mut memory);

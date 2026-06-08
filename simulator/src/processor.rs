@@ -137,13 +137,13 @@ impl Processor {
         }
 
         if micro & PC_INCR != 0 {
-            self.pc = self.pc.wrapping_add(1);
+            self.pc = self.pc.wrapping_add(4);
         }
         if micro & SP_INCR != 0 {
-            self.sp = self.sp.wrapping_add(1);
+            self.sp = self.sp.wrapping_add(4);
         }
         if micro & SP_DECR != 0 {
-            self.sp = self.sp.wrapping_sub(1);
+            self.sp = self.sp.wrapping_sub(4);
         }
 
         if micro & UPDATE_FLAGS != 0 {

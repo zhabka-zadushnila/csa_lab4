@@ -48,9 +48,10 @@ impl Memory {
         }
         self.addr = addr;
         self.write = false;
-        let idx = (addr as usize) % self.cache_size;
-        let tag = addr / self.cache_size as u32;
-        if self.cache_tags[idx] == tag {
+        let word_addr = addr / 4;
+        let idx = (word_addr as usize) % self.cache_size;
+        let tag = word_addr / self.cache_size as u32;
+        if addr.is_multiple_of(4) && self.cache_tags[idx] == tag {
             self.mdr = self.cache_data[idx];
             self.done = true;
         } else {
@@ -71,9 +72,10 @@ impl Memory {
         self.addr = addr;
         self.mdr = value;
         self.write = true;
-        let idx = (addr as usize) % self.cache_size;
-        let tag = addr / self.cache_size as u32;
-        if self.cache_tags[idx] == tag {
+        let word_addr = addr / 4;
+        let idx = (word_addr as usize) % self.cache_size;
+        let tag = word_addr / self.cache_size as u32;
+        if addr.is_multiple_of(4) && self.cache_tags[idx] == tag {
             self.counter = 1;
         } else {
             self.counter = 10;
@@ -87,18 +89,21 @@ impl Memory {
         }
         self.counter -= 1;
         if self.counter == 0 {
-            let idx = (self.addr as usize) % self.cache_size;
-            let tag = self.addr / self.cache_size as u32;
+            let word_addr = self.addr / 4;
+            let idx = (word_addr as usize) % self.cache_size;
+            let tag = word_addr / self.cache_size as u32;
             if self.write {
                 self.write_through(self.addr, self.mdr);
-                if self.cache_tags[idx] == tag {
+                if self.addr.is_multiple_of(4) && self.cache_tags[idx] == tag {
                     self.cache_data[idx] = self.mdr;
                 }
             } else {
                 let data = self.read_through(self.addr);
                 self.mdr = data;
-                self.cache_tags[idx] = tag;
-                self.cache_data[idx] = data;
+                if self.addr.is_multiple_of(4) {
+                    self.cache_tags[idx] = tag;
+                    self.cache_data[idx] = data;
+                }
             }
             self.busy = false;
             self.done = true;
@@ -133,22 +138,44 @@ impl Memory {
                     let val = self.input_buf[self.input_pos];
                     self.input_pos += 1;
                     val
-                } else if (addr as usize) < self.size {
-                    self.data[addr as usize]
                 } else {
                     0
                 }
             }
-            _ if (addr as usize) < self.size => self.data[addr as usize],
-            _ => 0,
+            _ => {
+                let mut result = 0i32;
+                for i in 0..=3 {
+                    let byte_addr = addr.wrapping_add(i);
+                    let word_addr = (byte_addr / 4) as usize;
+                    let byte_off = (byte_addr % 4) as usize;
+                    let word = if word_addr < self.size {
+                        self.data[word_addr]
+                    } else {
+                        0
+                    };
+                    let byte = ((word >> (byte_off * 8)) & 0xFF) as i32;
+                    result |= byte << (i * 8);
+                }
+                result
+            }
         }
     }
 
     fn write_through(&mut self, addr: u32, value: i32) {
         if addr == Self::OUT_ADDR {
             self.output_buf.push(value);
-        } else if (addr as usize) < self.size {
-            self.data[addr as usize] = value;
+            return;
+        }
+        for i in 0..=3 {
+            let byte_addr = addr.wrapping_add(i);
+            let word_addr = (byte_addr / 4) as usize;
+            let byte_off = (byte_addr % 4) as usize;
+            if word_addr < self.size {
+                let byte = ((value >> (i * 8)) & 0xFF) as i32;
+                let mask = !(0xFF << (byte_off * 8));
+                let old = self.data[word_addr];
+                self.data[word_addr] = (old & mask) | (byte << (byte_off * 8));
+            }
         }
     }
 
@@ -157,8 +184,9 @@ impl Memory {
     }
 
     pub fn load(&mut self, addr: u32, data: &[i32]) {
+        let base = (addr / 4) as usize;
         for (i, &val) in data.iter().enumerate() {
-            let a = (addr as usize) + i;
+            let a = base + i;
             if a < self.size {
                 self.data[a] = val;
             }
@@ -166,12 +194,13 @@ impl Memory {
     }
 
     pub fn get(&self, addr: u32) -> i32 {
-        self.data[addr as usize]
+        self.data[(addr / 4) as usize]
     }
 
     pub fn set(&mut self, addr: u32, value: i32) {
-        if (addr as usize) < self.size {
-            self.data[addr as usize] = value;
+        let idx = (addr / 4) as usize;
+        if idx < self.size {
+            self.data[idx] = value;
         }
     }
 }

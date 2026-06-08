@@ -9,7 +9,7 @@ fn main() {
 
     let bin_path = &args[1];
     let binary = fs::read(bin_path).unwrap();
-    let data_end = args.get(2).and_then(|s| s.parse::<u32>().ok()).unwrap_or(2);
+    let data_end = args.get(2).and_then(|s| s.parse::<u32>().ok()).unwrap_or(8);
     let mem_size = args
         .get(3)
         .and_then(|s| s.parse::<usize>().ok())
@@ -29,9 +29,9 @@ fn main() {
         words.push(val);
     }
 
-    let code_start = data_end as usize;
-    let data_words = if code_start <= words.len() {
-        code_start
+    let code_start_words = (data_end / 4) as usize;
+    let data_words = if code_start_words <= words.len() {
+        code_start_words
     } else {
         words.len()
     };
@@ -42,7 +42,7 @@ fn main() {
     }
 
     proc.pc = data_end;
-    proc.sp = data_end + code_len as u32;
+    proc.sp = data_end + code_len as u32 * 4;
 
     if let Some(in_path) = args.get(4) {
         let in_data = fs::read(in_path).unwrap();
