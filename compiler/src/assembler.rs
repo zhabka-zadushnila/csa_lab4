@@ -89,7 +89,7 @@ impl Assembler {
             code_cmds: Vec::new(),
             symbols: HashMap::new(),
             func_params: HashMap::new(),
-            data_addr: 0,
+            data_addr: 5,
             label_counter: 0,
             text: String::new(),
             binary: Vec::new(),
@@ -134,7 +134,7 @@ impl Assembler {
                 match typ {
                     Type::I32 => {
                         let val = eval_i32_expr(expr).unwrap_or(0);
-                        self.add_variable(name.clone(), 4);
+                        self.add_variable(name.clone(), 1);
                         self.data_cmds.push(Command::Word(vec![val]));
                     }
                     Type::StringType => {
@@ -146,7 +146,7 @@ impl Assembler {
                         } else {
                             vec![0]
                         };
-                        let size = (content.len() * 4) as u32;
+                        let size = content.len() as u32;
                         self.add_variable(name.clone(), size);
                         self.data_cmds.push(Command::Word(content));
                     }
@@ -159,7 +159,7 @@ impl Assembler {
                         } else {
                             vec![0; *size]
                         };
-                        self.add_variable(name.clone(), (*size * 4) as u32);
+                        self.add_variable(name.clone(), *size as u32);
                         self.data_cmds.push(Command::Word(vals));
                     }
                 }
@@ -169,14 +169,14 @@ impl Assembler {
         for func in &program.functions {
             if func.return_type.is_some() {
                 let ret_name = format!("{}_ret", func.name);
-                self.add_variable(ret_name, 4);
+                self.add_variable(ret_name, 1);
                 self.data_cmds.push(Command::Word(vec![0]));
             }
 
             let mut param_names = Vec::new();
             for param in &func.params {
                 let mangled = mangle(&param.name, &func.name);
-                self.add_variable(mangled, 4);
+                self.add_variable(mangled, 1);
                 self.data_cmds.push(Command::Word(vec![0]));
                 param_names.push(param.name.clone());
             }
@@ -185,22 +185,22 @@ impl Assembler {
             self.collect_locals_in_block(&func.body, &func.name);
         }
 
-        self.add_variable("__tmp_val".to_string(), 4);
+        self.add_variable("__tmp_val".to_string(), 1);
         self.data_cmds.push(Command::Word(vec![0]));
 
         for i in 0..TEMP_COUNT {
             let name = format!("__tmp_{}", i);
-            self.add_variable(name, 4);
+            self.add_variable(name, 1);
             self.data_cmds.push(Command::Word(vec![0]));
         }
         for i in 0..TEMP_IDX_COUNT {
             let name = format!("__tmp_idx_{}", i);
-            self.add_variable(name, 4);
+            self.add_variable(name, 1);
             self.data_cmds.push(Command::Word(vec![0]));
         }
         for i in 0..TEMP_PTR_COUNT {
             let name = format!("__tmp_ptr_{}", i);
-            self.add_variable(name, 4);
+            self.add_variable(name, 1);
             self.data_cmds.push(Command::Word(vec![0]));
         }
     }
@@ -214,19 +214,18 @@ impl Assembler {
                         continue;
                     }
                     let size = match typ {
-                        Type::I32 => 4,
+                        Type::I32 => 1,
                         Type::StringType => {
                             if let Expr::String(s) = expr {
-                                ((s.len() + 1) * 4) as u32
+                                (s.len() + 1) as u32
                             } else {
-                                4
+                                1
                             }
                         }
-                        Type::Array(_, sz) => (*sz * 4) as u32,
+                        Type::Array(_, sz) => *sz as u32,
                     };
                     self.add_variable(mangled, size);
-                    self.data_cmds
-                        .push(Command::Word(vec![0; size as usize / 4]));
+                    self.data_cmds.push(Command::Word(vec![0; size as usize]));
                 }
                 Statement::If(_, then_block, else_block) => {
                     self.collect_locals_in_block(then_block, func);
@@ -292,7 +291,7 @@ impl Assembler {
                 for (i, elem) in elems.iter().enumerate() {
                     self.compile_expr(elem, func, depth);
                     self.code_cmds
-                        .push(Command::St(Operand::Addr(base_addr + i as u32 * 4)));
+                        .push(Command::St(Operand::Addr(base_addr + i as u32)));
                 }
             }
             (Type::StringType, Expr::String(s)) => {
@@ -301,7 +300,7 @@ impl Assembler {
                     self.code_cmds
                         .push(Command::Ld(Operand::Immediate(byte as i32)));
                     self.code_cmds
-                        .push(Command::St(Operand::Addr(base_addr + i as u32 * 4)));
+                        .push(Command::St(Operand::Addr(base_addr + i as u32)));
                 }
             }
             _ => {
@@ -332,11 +331,6 @@ impl Assembler {
                 .push(Command::St(Operand::Named(val_tmp.clone())));
 
             self.compile_expr(idx, func, depth + 1);
-            self.code_cmds
-                .push(Command::St(Operand::Named(idx_tmp.clone())));
-            self.code_cmds
-                .push(Command::Ld(Operand::Named(idx_tmp.clone())));
-            self.code_cmds.push(Command::Mul(Operand::Immediate(4)));
             self.code_cmds
                 .push(Command::St(Operand::Named(idx_tmp.clone())));
             self.code_cmds
@@ -682,11 +676,6 @@ impl Assembler {
         self.code_cmds
             .push(Command::St(Operand::Named(idx_tmp.clone())));
         self.code_cmds
-            .push(Command::Ld(Operand::Named(idx_tmp.clone())));
-        self.code_cmds.push(Command::Mul(Operand::Immediate(4)));
-        self.code_cmds
-            .push(Command::St(Operand::Named(idx_tmp.clone())));
-        self.code_cmds
             .push(Command::Ld(Operand::Immediate(base_addr as i32)));
         self.code_cmds.push(Command::Add(Operand::Named(idx_tmp)));
         self.code_cmds
@@ -707,8 +696,8 @@ impl Assembler {
             }
             match cmd {
                 Command::Label(_) => {}
-                Command::Word(v) => addr += v.len() as u32 * 4,
-                _ => addr += 4,
+                Command::Word(v) => addr += v.len() as u32,
+                _ => addr += 1,
             }
         }
 
@@ -728,7 +717,7 @@ impl Assembler {
                 for &v in values {
                     self.binary.extend_from_slice(&(v as u32).to_le_bytes());
                 }
-                addr += values.len() as u32 * 4;
+                addr += values.len() as u32;
             }
         }
 
