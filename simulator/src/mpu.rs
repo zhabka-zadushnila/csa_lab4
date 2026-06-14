@@ -420,10 +420,6 @@ impl Mpu {
             }
         }
 
-        if memory.is_done() {
-            proc.dr = memory.collect();
-        }
-
         if self.current_micro & HALT != 0 {
             proc.run = false;
         }

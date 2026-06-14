@@ -65,7 +65,6 @@ impl Memory {
         }
         if addr == Self::IN_ADDR || addr == Self::OUT_ADDR {
             self.write_through(addr, value);
-            self.done = true;
             return;
         }
         self.addr = addr;

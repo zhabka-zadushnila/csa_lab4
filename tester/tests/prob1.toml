@@ -139287,17 +139287,17 @@ TICK 139084 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [
 TICK 139085 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [0x0]        | PC=107  SP=109  AC=233168 AR=107  DR=11FFFFFF mem=idle
 TICK 139086 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=107  DR=11FFFFFF mem=idle
 TICK 139087 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=107  DR=00038ED0 mem=idle
-TICK 139088 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=33554431 DR=11FFFFFF mem=idle
-TICK 139089 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139090 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139091 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139092 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139093 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139094 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139095 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139096 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139097 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
-TICK 139098 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=11FFFFFF mem=busy
+TICK 139088 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=33554431 DR=00038ED0 mem=idle
+TICK 139089 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139090 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139091 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139092 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139093 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139094 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139095 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139096 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139097 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
+TICK 139098 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=00038ED0 mem=busy
 TICK 139099 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=108  SP=109  AC=233168 AR=108  DR=AE000000 mem=idle
 TICK 139100 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | HALT            | PC=109  SP=109  AC=233168 AR=108  DR=AE000000 mem=idle
 TICK 139101 | μPC 2 | HALT|DONE|PASS                                     | HALT            | PC=109  SP=109  AC=233168 AR=108  DR=AE000000 mem=idle

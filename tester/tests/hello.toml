@@ -573,17 +573,17 @@ TICK  427 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0
 TICK  428 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=72     AR=86   DR=11FFFFFF mem=idle
 TICK  429 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=86   DR=11FFFFFF mem=idle
 TICK  430 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=86   DR=00000048 mem=idle
-TICK  431 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=33554431 DR=11FFFFFF mem=idle
-TICK  432 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  433 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  434 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  435 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  436 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  437 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  438 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  439 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  440 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
-TICK  441 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=11FFFFFF mem=busy
+TICK  431 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=33554431 DR=00000048 mem=idle
+TICK  432 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  433 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  434 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  435 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  436 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  437 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  438 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  439 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  440 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
+TICK  441 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=00000048 mem=busy
 TICK  442 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=72     AR=87   DR=0A000001 mem=idle
 TICK  443 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=72     AR=87   DR=0A000001 mem=idle
 TICK  444 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -747,7 +747,7 @@ TICK  601 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK  602 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=101    AR=86   DR=11FFFFFF mem=idle
 TICK  603 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=101    AR=86   DR=11FFFFFF mem=idle
 TICK  604 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=101    AR=86   DR=00000065 mem=idle
-TICK  605 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=101    AR=33554431 DR=11FFFFFF mem=idle
+TICK  605 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=101    AR=33554431 DR=00000065 mem=idle
 TICK  606 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=101    AR=87   DR=0A000001 mem=idle
 TICK  607 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=101    AR=87   DR=0A000001 mem=idle
 TICK  608 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -861,7 +861,7 @@ TICK  715 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK  716 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK  717 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK  718 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=0000006C mem=idle
-TICK  719 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=11FFFFFF mem=idle
+TICK  719 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=0000006C mem=idle
 TICK  720 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK  721 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK  722 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -975,7 +975,7 @@ TICK  829 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK  830 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK  831 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK  832 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=0000006C mem=idle
-TICK  833 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=11FFFFFF mem=idle
+TICK  833 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=0000006C mem=idle
 TICK  834 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK  835 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK  836 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1089,7 +1089,7 @@ TICK  943 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK  944 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=111    AR=86   DR=11FFFFFF mem=idle
 TICK  945 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=86   DR=11FFFFFF mem=idle
 TICK  946 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=86   DR=0000006F mem=idle
-TICK  947 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=33554431 DR=11FFFFFF mem=idle
+TICK  947 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=33554431 DR=0000006F mem=idle
 TICK  948 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=87   DR=0A000001 mem=idle
 TICK  949 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=111    AR=87   DR=0A000001 mem=idle
 TICK  950 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1203,7 +1203,7 @@ TICK 1057 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1058 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=44     AR=86   DR=11FFFFFF mem=idle
 TICK 1059 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=44     AR=86   DR=11FFFFFF mem=idle
 TICK 1060 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=44     AR=86   DR=0000002C mem=idle
-TICK 1061 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=44     AR=33554431 DR=11FFFFFF mem=idle
+TICK 1061 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=44     AR=33554431 DR=0000002C mem=idle
 TICK 1062 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=44     AR=87   DR=0A000001 mem=idle
 TICK 1063 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=44     AR=87   DR=0A000001 mem=idle
 TICK 1064 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1317,7 +1317,7 @@ TICK 1171 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1172 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=32     AR=86   DR=11FFFFFF mem=idle
 TICK 1173 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=32     AR=86   DR=11FFFFFF mem=idle
 TICK 1174 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=32     AR=86   DR=00000020 mem=idle
-TICK 1175 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=32     AR=33554431 DR=11FFFFFF mem=idle
+TICK 1175 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=32     AR=33554431 DR=00000020 mem=idle
 TICK 1176 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=32     AR=87   DR=0A000001 mem=idle
 TICK 1177 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=32     AR=87   DR=0A000001 mem=idle
 TICK 1178 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1431,7 +1431,7 @@ TICK 1285 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1286 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=119    AR=86   DR=11FFFFFF mem=idle
 TICK 1287 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=119    AR=86   DR=11FFFFFF mem=idle
 TICK 1288 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=119    AR=86   DR=00000077 mem=idle
-TICK 1289 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=119    AR=33554431 DR=11FFFFFF mem=idle
+TICK 1289 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=119    AR=33554431 DR=00000077 mem=idle
 TICK 1290 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=119    AR=87   DR=0A000001 mem=idle
 TICK 1291 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=119    AR=87   DR=0A000001 mem=idle
 TICK 1292 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1545,7 +1545,7 @@ TICK 1399 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1400 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=111    AR=86   DR=11FFFFFF mem=idle
 TICK 1401 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=86   DR=11FFFFFF mem=idle
 TICK 1402 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=86   DR=0000006F mem=idle
-TICK 1403 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=33554431 DR=11FFFFFF mem=idle
+TICK 1403 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=33554431 DR=0000006F mem=idle
 TICK 1404 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=111    AR=87   DR=0A000001 mem=idle
 TICK 1405 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=111    AR=87   DR=0A000001 mem=idle
 TICK 1406 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1659,7 +1659,7 @@ TICK 1513 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1514 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=114    AR=86   DR=11FFFFFF mem=idle
 TICK 1515 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=114    AR=86   DR=11FFFFFF mem=idle
 TICK 1516 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=114    AR=86   DR=00000072 mem=idle
-TICK 1517 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=114    AR=33554431 DR=11FFFFFF mem=idle
+TICK 1517 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=114    AR=33554431 DR=00000072 mem=idle
 TICK 1518 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=114    AR=87   DR=0A000001 mem=idle
 TICK 1519 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=114    AR=87   DR=0A000001 mem=idle
 TICK 1520 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1773,7 +1773,7 @@ TICK 1627 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1628 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK 1629 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=11FFFFFF mem=idle
 TICK 1630 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=86   DR=0000006C mem=idle
-TICK 1631 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=11FFFFFF mem=idle
+TICK 1631 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=33554431 DR=0000006C mem=idle
 TICK 1632 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK 1633 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=108    AR=87   DR=0A000001 mem=idle
 TICK 1634 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -1887,7 +1887,7 @@ TICK 1741 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1742 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=100    AR=86   DR=11FFFFFF mem=idle
 TICK 1743 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=100    AR=86   DR=11FFFFFF mem=idle
 TICK 1744 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=100    AR=86   DR=00000064 mem=idle
-TICK 1745 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=100    AR=33554431 DR=11FFFFFF mem=idle
+TICK 1745 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=100    AR=33554431 DR=00000064 mem=idle
 TICK 1746 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=100    AR=87   DR=0A000001 mem=idle
 TICK 1747 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=100    AR=87   DR=0A000001 mem=idle
 TICK 1748 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
@@ -2001,7 +2001,7 @@ TICK 1855 | μPC 4 | ALU_TO_AC|DR_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS    | LD [[0
 TICK 1856 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | LD [[0x38]]     | PC=86   SP=94   AC=33     AR=86   DR=11FFFFFF mem=idle
 TICK 1857 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | ST [0x1FFFFFF]  | PC=87   SP=94   AC=33     AR=86   DR=11FFFFFF mem=idle
 TICK 1858 | μPC 2 | AC_TO_DR|PASS                                      | ST [0x1FFFFFF]  | PC=87   SP=94   AC=33     AR=86   DR=00000021 mem=idle
-TICK 1859 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=33     AR=33554431 DR=11FFFFFF mem=idle
+TICK 1859 | μPC 3 | OPERAND_TO_AR|DR_TO_MEM|DONE|PASS                  | ST [0x1FFFFFF]  | PC=87   SP=94   AC=33     AR=33554431 DR=00000021 mem=idle
 TICK 1860 | μPC 0 | PC_TO_AR|MEM_TO_DR|PASS                            | ST [0x1FFFFFF]  | PC=87   SP=94   AC=33     AR=87   DR=0A000001 mem=idle
 TICK 1861 | μPC 1 | PC_INCR|DR_TO_CR|PASS                              | LD #1           | PC=88   SP=94   AC=33     AR=87   DR=0A000001 mem=idle
 TICK 1862 | μPC 2 | ALU_TO_AC|IMM_TO_DATA_BUS|UPDATE_FLAGS|DONE|PASS   | LD #1           | PC=88   SP=94   AC=1      AR=87   DR=0A000001 mem=idle
