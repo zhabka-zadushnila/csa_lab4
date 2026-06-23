@@ -6,12 +6,17 @@ max_ticks = 20000
 source_code = """
 let msg: String = "Hello, world!";
 
+fn msg_out() {
+let i: i32 = 0;
+while msg[i] != 0 {
+    out(msg[i]);
+    i = i + 1;
+}
+
+}
+
 fn main() {
-    let i: i32 = 0;
-    while msg[i] != 0 {
-        out(msg[i]);
-        i = i + 1;
-    }
+msg_out();
 }
 
 """
